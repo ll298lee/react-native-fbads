@@ -39,7 +39,7 @@ public class MediaViewManager extends SimpleViewManager<MediaView> {
         mContext = context;
         view = new MediaView(context);
         view.setGravity(Gravity.CENTER);
-
+        view.setAutoplay(true);
         return view;
     }
 
