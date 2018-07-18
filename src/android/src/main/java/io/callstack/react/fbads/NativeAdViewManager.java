@@ -47,11 +47,9 @@ public class NativeAdViewManager extends ViewGroupManager<NativeAdView> {
     @ReactProp(name = "adsManager")
     public void setAdsManager(NativeAdView view, String adsManagerId) {
         NativeAdManager adManager = mReactContext.getNativeModule(NativeAdManager.class);
-        view.setNativeAd(adManager.getNextNativeAd(adsManagerId));
+        NativeAdsManager adsManager = adManager.getFBAdsManager(adsManagerId);
 
-//        NativeAdsManager adsManager = adManager.getFBAdsManager(adsManagerId);
-
-//        view.setNativeAd(adsManager.nextNativeAd());
+        view.setNativeAd(adsManager.nextNativeAd());
     }
 
     @ReactProp(name = "clickable")
